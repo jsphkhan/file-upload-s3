@@ -1,0 +1,34 @@
+This is a React App that uploads file to a S3 Bucket using S3 SDK
+
+To use AWS services install the "aws-sdk" NPM package
+
+This is not an Ejected App
+
+How to run
+------------------
+1. To run the app - create a production build
+npm run build
+
+2. And then start Node server: node server.js
+
+3. Or use Docker to run
+
+
+How it works
+---------------
+React app uploads file to Node server -> Node server uploads to S3
+
+React app runs at localhost:8081 (production build)
+React app makes POST call to /upload
+Node server handles POST call and uploads to S3
+
+
+Better technique
+------------------
+Since we are uploading the file first to Node and Node uploads to S3
+So the Node server is consuming resources.
+Rather directly upload files to S3 from client. 
+
+https://medium.com/@khelif96/uploading-files-from-a-react-app-to-aws-s3-the-right-way-541dd6be689
+https://www.koan.co/blog/uploading-images-to-s3-from-a-react-spa
+
